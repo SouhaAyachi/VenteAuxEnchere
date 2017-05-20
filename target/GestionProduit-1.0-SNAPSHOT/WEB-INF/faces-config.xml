@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+
+    
+    <navigation-rule>
+        <from-view-id>/index.xhtml</from-view-id>
+        <navigation-case>
+        <from-outcome>my_account</from-outcome>
+        <to-view-id>/resources/glammy/pages/my-account.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>productDetails</from-outcome>
+            <to-view-id>/resources/glammy/pages/product-page.html</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <from-view-id>/resources/glammy/pages/product-page2.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/index.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+    <validator>
+        <validator-id>montantEnchValidator</validator-id>
+        <validator-class>fst.jee.validator.EnchValidator</validator-class>
+    </validator>
+    <navigation-rule>
+        <from-view-id>/produit/kdim/prodAjouter.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>case1</from-outcome>
+            <to-view-id>/my-account.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>

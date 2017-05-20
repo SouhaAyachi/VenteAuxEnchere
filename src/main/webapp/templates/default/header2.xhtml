@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+       xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+        xmlns:h="http://java.sun.com/jsf/html">
+ 
+    <ui:composition>
+
+
+		<!-- HEADER -->
+		<header>
+			
+			<!-- TOP INFO -->
+			<div class="top_info">
+				
+				<!-- CONTAINER -->
+				<div class="container clearfix">
+					<ul class="secondary_menu">
+						
+                                                <li> <c:if test="#{sessionBean.sessionBool}">
+                                                     <h:form>
+                                                        <h:commandLink action="#{login.logout()}" value="LOGOUT"></h:commandLink>
+                                                     </h:form>
+                                                    </c:if>
+                                                </li>
+                                               
+                                               <c:if test="#{!sessionBean.sessionBool}">
+                                                        <li><a href="my-account.xhtml" >Connexion</a></li>
+                                                         <li><a href="my-account.xhtml" >Register</a></li>
+                                                </c:if>
+                                                
+					</ul>
+					
+					<div class="live_chat"><a href="javascript:void(0);" ><i class="fa fa-comment-o"></i> Live chat</a></div>
+					
+					<div class="phone_top">have a question? <a href="tel:+216 24 04 95 96 " >+216 24 04 95 96 </a></div>
+				</div><!-- //CONTAINER -->
+			</div><!-- TOP INFO -->
+			
+			
+			<!-- MENU BLOCK -->
+			<div class="menu_block">
+			
+				<!-- CONTAINER -->
+				<div class="container clearfix">
+					
+					<!-- LOGO -->
+					<div class="logo">
+						<a href="index.html" ><img src="../images/logo.png" alt="" /></a>
+					</div><!-- //LOGO -->
+					
+					
+					<!-- SEARCH FORM -->
+                                       <c:if test="#{sessionBean.sessionBool}">
+					<div class="top_search_form">
+						<a class="top_search_btn" href="produit/prodAjouter.xhtml" ><i class="fa fa-user"></i></a>
+						
+                                                <p>Bonjour #{session.getAttribute("user").nom}</p>
+					</div><!-- SEARCH FORM -->
+                                       </c:if>
+					
+					<!-- SHOPPING BAG -->
+					<div class="shopping_bag">
+						<a class="shopping_bag_btn" href="shopping_bag.xhtml" ><i class="fa fa-shopping-cart"></i><p>shopping bag</p>
+                                                    <span><c:if test="#{sessionBean.sessionBool}">
+                                                         #{panierBean.nb}
+                                                    </c:if></span></a>
+						<div class="cart">
+							<ul class="cart-items">
+								<li class="clearfix">
+									<img class="cart_item_product" src="../images/tovar/women/1.jpg" alt="" />
+									<a href="product-page.html" class="cart_item_title">popover sweatshirt in floral jacquard</a>
+									<span class="cart_item_price">1 × $98.00</span>
+								</li>
+								<li class="clearfix">
+									<img class="cart_item_product" src="../images/tovar/women/3.jpg" alt="" />
+									<a href="product-page.html" class="cart_item_title">japanese indigo denim jacket</a>
+									<span class="cart_item_price">2 × $158.00</span>
+								</li>
+							</ul>
+							<div class="cart_total">
+								<div class="clearfix"><span class="cart_subtotal">bag subtotal: <b>$414</b></span></div>
+								<a class="btn active" href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div><!-- //SHOPPING BAG -->
+					
+					
+					<!-- LOVE LIST -->
+					<div class="love_list">
+						<a class="love_list_btn" href="javascript:void(0);" ><i class="fa fa-heart-o"></i><p>Love list</p><span>0</span></a>
+						<div class="cart">
+							<ul class="cart-items">
+								<li>Cart is empty</li>
+							</ul>
+							<div class="cart_total">
+								<div class="clearfix"><span class="cart_subtotal">bag subtotal: <b>$0</b></span></div>
+								<a class="btn active" href="checkout.html">Checkout</a>
+							</div>
+						</div>
+					</div><!-- //LOVE LIST -->
+					
+					
+					<!-- MENU -->
+					<ul class="navmenu center">
+						<li><a href="index.xhtml" >Home</a></li>
+						<li class="sub-menu"><a href="javascript:void(0);" >weeding</a>
+							<!-- MEGA MENU -->
+							<ul class="mega_menu megamenu_col1 clearfix">
+								<li class="col">
+									<ol>
+										<li><a href="productList.xhtml?id=11" >weeding dresses</a></li>
+										<!--li><a href="productList.xhtml?id=11" >Accesseries<span>new</span></a></li>
+										<li><a href="productList.xhtml?id=11" >cosmetic product</a></li>
+										<li><a href="productList.xhtml?id=11" >dresses for kids</a></li-->
+										
+									</ol>
+								</li>
+							</ul><!-- //MEGA MENU -->
+						</li>
+						<li class="sub-menu"><a href="javascript:void(0);" >clothing</a>
+							<!-- MEGA MENU -->
+							<ul class="mega_menu megamenu_col2 clearfix">
+								<li class="col">
+									<ol>
+                                                                                <li><a href="productList.xhtml?id=1" >dresses</a></li>
+                                                                                <li><a href="productList.xhtml?id=7" >sweaters and coats</a></li>
+										<li><a href="productList.xhtml?id=2" >shirts et tops</a></li>
+										<li><a href="productList.xhtml?id=4" >pants</a></li>
+										<li><a href="productList.xhtml?id=12" >denim</a></li>
+										
+									</ol>
+								</li>
+								
+							</ul><!-- //MEGA MENU -->
+						</li>
+                                                <li><a href="productList.xhtml?id=13" >KIDS</a></li>
+						<li><a href="productList.xhtml?id=8" >Shoes,Bags</a></li>
+                                                <li><a href="productList.xhtml?id=14" >Accessories</a></li>
+						<li class="sub-menu active"><a href="index.html" >Pages</a>
+							<!-- MEGA MENU -->
+							<ul class="mega_menu megamenu_col3 clearfix">
+								<li class="col">
+									<ol>
+										<li><a href="about.html" >About Us</a></li>
+										<li><a href="gallery.html" >Gallery<span>new</span></a></li>
+										<li class="active"><a href="product-page.html" >Product Page</a></li>
+										<li><a href="articles.html" >Articles</a></li>
+										<li><a href="my-account.html" >My Account</a></li>
+										
+									</ol>
+								</li>
+								<li class="col">
+									<ol>
+										<li><a href="contacts.html" >Contacts</a></li>
+										<li><a href="checkout.html" >Checkout</a></li>
+									</ol>
+								</li>
+								
+							</ul><!-- //MEGA MENU -->
+						</li>
+						<li class="last sale_menu"><a href="sale.html" >Sale</a></li>
+					</ul><!-- //MENU -->
+				</div><!-- //MENU BLOCK -->
+			</div><!-- //CONTAINER -->
+		</header><!-- //HEADER -->
+			 
+		
+		<!-- BREADCRUMBS -->
+		<!--section class="breadcrumb parallax margbot30"></section-->
+		<!-- //BREADCRUMBS -->
+		
+    </ui:composition>
+</html>
+ 

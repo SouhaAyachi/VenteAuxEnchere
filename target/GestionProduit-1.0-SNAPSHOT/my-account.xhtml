@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="templates/default/main.xhtml">
+		
+		<ui:define name="title">
+                    myAccount
+                </ui:define>
+		<!-- MY ACCOUNT PAGE -->
+		<section class="my_account parallax">
+			
+			<!-- CONTAINER -->
+			<div class="container">
+				
+				<div class="my_account_block clearfix">
+					<div class="login">
+						<h2>I'M ALREADY REGISTERED</h2>
+                                                
+                                                <h:form id="form">
+                                                    
+                                                        <p:outputLabel for="text1" value="Login:" />
+                                                        <p:inputText id="text1" value="#{login.login}" required="true" label="login">
+                                                            <f:validateLength minimum="2" maximum="30"/>
+                                                        </p:inputText>
+                                                        <p:message for="text1" />
+
+                                                        <p:outputLabel for="text2" value="Password" />
+                                                        <p:inputText id="text2" value="#{login.pwd}" required="true" label="password"/>
+                                                       
+                                                        <p:message for="text2" />
+                                                        
+                                                        <p:commandButton value="Submit"  actionListener="#{login.verifLogin}" style="margin-right:20px;" ajax="false" />
+                                                    
+                                                 </h:form>    
+                                                
+						<!--form class="login_form" action="javascript:void(0);" method="get">
+							<input type="text" name="username" value="Username or email" onFocus="if (this.value == 'Username or email') this.value = '';" onBlur="if (this.value == '') this.value = 'Username or email';" />
+							<input class="last" type="text" name="password" value="Password" onFocus="if (this.value == 'Password') this.value = '';" onBlur="if (this.value == '') this.value = 'Password';" />
+							<div class="clearfix">
+								<div class="pull-left"><input type="checkbox" id="categorymanufacturer1" /><label for="categorymanufacturer1">Keep me signed</label></div>
+								<div class="pull-right"><a class="forgot_pass" href="javascript:void(0);" >Forgot password?</a></div>
+							</div>
+							<div class="center"><input type="submit" value="Login"/></div>
+						</form-->
+					</div>
+					<div class="new_customers">
+						<h2>NEW CUSTOMERS</h2>
+						
+						 
+                                                <h:form id="formRegister">
+                                                   
+                                                        <p:outputLabel for="text3" value="Nom:" />
+                                                        <p:inputText id="text3" value="#{user.nom}" required="true" label="Nom">
+                                                            <f:validateLength minimum="2" maximum="30"/>
+                                                        </p:inputText><br/>
+                                                        <p:message for="text3" id="messages1" />
+                                                        
+                                                        <p:outputLabel for="text4" value="Login:" />
+                                                        <p:inputText id="text4" value="#{user.login}" required="true" label="login">
+                                                            <f:validateLength minimum="2" maximum="30"/>
+                                                        </p:inputText>
+                                                        <p:message for="text4" id="messages4" />
+                                                       
+                                                      
+                                                                                <br/>
+                                                        <p:outputLabel for="text5" value="Password" />
+                                                        <p:inputText id="text5" value="#{user.mdp}" required="true" label="password"/><br/>
+                                                          <p:message for="text5" />
+                                                       
+                                                        <p:commandButton value="Submit"  actionListener="#{userBean.saveUser(user)}" style="margin-right:20px;" ajax="false" />
+                                                  
+                                                    </h:form>    
+                                                <p>Register with Glammy Shop to enjoy personalized services, including:</p>
+                                                <ul>
+							<li><a href="javascript:void(0);" >—  Online Order Status</a></li>
+							<li><a href="javascript:void(0);" >—  Love List</a></li>
+							<li><a href="javascript:void(0);" >—  Sign up to receive exclusive news and private sales</a></li>
+							<li><a href="javascript:void(0);" >—  Place Test Orders</a></li>
+							<li><a href="javascript:void(0);" >—  Quick and easy checkout</a></li>
+						</ul>
+						<div class="center"><a class="btn active" href="javascript:void(0);" >create new account</a></div>
+					</div>
+				</div>
+				
+				<div class="my_account_note center">HAVE A QUESTION? <b>1 800 888 02828</b></div>
+			</div><!-- //CONTAINER -->
+		</section><!-- //MY ACCOUNT PAGE -->
+		
+</ui:composition>
+</html>

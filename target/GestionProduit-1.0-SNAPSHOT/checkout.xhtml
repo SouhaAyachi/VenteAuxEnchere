@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+<ui:composition template="templates/default/main.xhtml">
+
+		<!-- BREADCRUMBS -->
+		<section class="breadcrumb parallax margbot30"></section>
+		<!-- //BREADCRUMBS -->
+		
+		
+		<!-- PAGE HEADER -->
+		<section class="page_header">
+			
+			<!-- CONTAINER -->
+			<div class="container border0 margbot0">
+				<h3 class="pull-left"><b>Checkout</b></h3>
+				
+				<div class="pull-right">
+					<a href="shopping-bag.html" >Back shopping bag<i class="fa fa-angle-right"></i></a>
+				</div>
+			</div><!-- //CONTAINER -->
+		</section><!-- //PAGE HEADER -->
+		
+		
+		<!-- CHECKOUT PAGE -->
+		<section class="checkout_page">
+			
+			<!-- CONTAINER -->
+			<div class="container">
+
+				<!-- CHECKOUT BLOCK -->
+				<div class="checkout_block">
+					<ul class="checkout_nav">
+						<li class="active_step">1. Shipping Address</li>
+						<li>2. Delivery</li>
+						<li>3. Payment</li>
+						<li class="last">4. Confirm Orded</li>
+					</ul>
+					
+					<h:form class="checkout_form clearfix" >
+						<div class="checkout_form_input country">
+							<label>Country <span class="color_red">*</span></label>
+                                                       
+						</div>
+						
+						<div class="checkout_form_input sity">
+							<label>city <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.ville}"  />
+						</div>
+						
+						<div class="checkout_form_input last postcode">
+							<label>Postcode <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.codePostale}"  />
+						</div>
+						
+						<div class="checkout_form_input2 adress">
+							<label>Street Adress 1 <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.street}"  />
+						</div>
+						
+						
+						
+						<hr class="clear"/>
+						
+						<div class="checkout_form_input first_name">
+							<label>First Name <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.nom}"  />
+						</div>
+						
+						<div class="checkout_form_input last_name">
+							<label>Last name <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.prenom}"  />
+						</div>
+						
+						<div class="checkout_form_input phone">
+							<label>Phone <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.tel}"  />
+						</div>
+						
+						<div class="checkout_form_input last E-mail">
+							<label>e-mail <span class="color_red">*</span></label>
+                                                        <h:inputText  value="#{cmd.mail}"  />
+						</div>
+						
+						<div class="clear"></div>
+						
+						<div class="checkout_form_note">All fields marked with (<span class="color_red">*</span>) are required</div>
+						
+						
+                                                <h:commandButton class="checkout_form_note"  value="Continue" actionListener="#{cmdBean.cmdSave(cmd)}">
+                                                </h:commandButton>
+					</h:form>
+				</div><!-- //CHECKOUT BLOCK -->
+			</div><!-- //CONTAINER -->
+		</section><!-- //CHECKOUT PAGE -->
+		
+	
+		</ui:composition>
+</html>

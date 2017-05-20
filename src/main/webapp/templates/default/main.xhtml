@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+    <h:head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <f:facet name="first">
+            <meta charset="utf-8"/>
+            <title><ui:insert name="title">Facelets Template</ui:insert></title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <meta name="description" content=""/>
+            <meta name="author" content=""/>
+        </f:facet>
+ 
+        <f:facet name="middle">
+           <link rel="shortcut icon" href="../images/favicon.ico"/>
+    
+	<!-- CSS -->
+	<link href="resources/glammy/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="resources/glammy/css/flexslider.css" rel="stylesheet" type="text/css" />
+	<link href="resources/glammy/css/fancySelect.css" rel="stylesheet" media="screen, projection" />
+	<link href="resources/glammy/css/animate.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="resources/glammy/css/style.css" rel="stylesheet" type="text/css" />
+    
+	<!-- FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'/>
+	<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>
+	
+        </f:facet>
+        
+        <f:facet name="last">
+ 
+        </f:facet>
+ 
+    </h:head>
+ 
+    <h:body>
+               <!-- PRELOADER -->
+<div id="preloader"><img src="../images/preloader.gif" alt="" /></div>
+<!-- //PRELOADER -->
+<div class="preloader_hide">
+
+	<!-- PAGE -->
+	<div id="page">
+      <ui:include src="header.xhtml" />
+      <ui:insert></ui:insert>
+      <ui:include src="footer.xhtml" /> 
+      
+        </div>
+</div>
+    </h:body>
+</html>

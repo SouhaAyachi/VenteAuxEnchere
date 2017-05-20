@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+top 10 Ecommerce sites
+http://www.top10ecommercesitebuilders.com/?utm_source=google&kw=site%20ecommerce&c=168860028362&t=search&p=&m=p&adpos=1t1&dev=c&devmod=&mobval=0&network=g&campaignid=98622303&adgroupid=7582346823&targetid=aud-287900311166:kwd-149850577&interest=&physical=1012760&feedid=&a=502&ts=int&gclid=CjwKEAjwrMzHBRDW3saA88aT80MSJACbvo1TMcGGflrWaJ60-HA1yFTrn9Nre9UPl57Vhy-J99429hoC1w_w_wcB
+
+
+ebay exemple form pour vendre
+http://csr.ebay.fr/sell/list.jsf?usecase=create&mode=AddItem&categoryId=326&motors=0&categoryPath=220%7C238%7C326&title=vettements
+
+fazt image
+http://stackoverflow.com/questions/11506762/display-uploaded-image-in-jsf
++
+http://stackoverflow.com/questions/11506762/display-uploaded-image-in-jsf
+
+
+upload image sous serveur:
+basic
+https://www.primefaces.org/showcase/ui/file/upload/basic.xhtml
+advanced
+https://www.primefaces.org/showcase/ui/file/upload/single.xhtml
+
+
+select
+https://www.primefaces.org/showcase/ui/input/oneMenu.xhtml
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" >
+    <h:head>
+        <title>Liste Produit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+   
+   
+    
+    
+        <br/><br/><br/>
+	<h:form id="form" enctype="multipart/form-data">
+
+            <p:messages id="messages" />
+
+            <p:panelGrid id="newPerson" columns="2">
+
+                <p:outputLabel for="txt_name" value="Designation" />
+
+                <p:inputText id="txt_name" value="#{produit.designation}" />
+
+                <p:outputLabel for="txt_lastname" value="Description" />
+
+                <p:inputText id="txt_lastname" value="#{produit.description}" />
+ 
+                <p:fileUpload value="#{produitMangedBean.uploadedFile}" mode="simple" skinSimple="true"/>
+                
+                <!--h:outputLabel for="image" value="Select Image: *" />
+                <p:fileUpload value="#{uploadImage.file}" mode="simple" allowTypes="/(\.|\/)(gif|jpe?g|png)$/"/--> 
+               
+                <!--p:outputLabel for="cat" value="Grouping: " />
+                <p:selectOneMenu id="cat" value="#{produit.cat}"  converter="#{sousCatConvertor}">
+                        <f:selectItems value="#{selectOneMenuView.sousCats}" />
+                    </p:selectOneMenu-->
+                <p:commandButton id="btn_save" value="Save" action="#{produitMangedBean.save(produit)}"
+
+                            ajax="false"     ><!--process=":form:newProduit"
+
+                                 update=":form:newProduit :form:products :form:messages"-->
+
+                </p:commandButton>
+
+            </p:panelGrid>
+
+            </h:form>
+        
+        
+        <p:dataTable var="p" value="#{produitMangedBean.products}" 
+            rows="10" 
+            paginator="true" 
+            paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+            rowsPerPageTemplate="5,10,15">         
+                    
+            <p:column headerText="Id">
+                <h:outputText value="#{p.id}" />
+            </p:column>
+
+            <p:column headerText="Designation">
+                <h:outputText value="#{p.designation}" />
+            </p:column>
+
+            <p:column headerText="description">
+                <h:outputText value="#{p.description}" />
+            </p:column>
+
+            <p:column headerText="categorie">
+                <h:outputText value="#{p.cat.designation}" />
+            </p:column>
+        </p:dataTable>
+        
+        
+       
+    </h:body>
+</html>
